@@ -50,7 +50,7 @@ function handleSubmit(event) {
 
 // Function to filter and update the country list -- NEEDED HELP FOR THIS PART WAS QUITE HARD
 function filterAndUpdateList(query) {
-    const filteredCountries = globalOutput.filter(country => {
+    const filteredCountriesList = globalOutput.filter(country => {
         const countryName = country.name.common.toLowerCase();
         return countryName.includes(query.toLowerCase());
     });
@@ -58,7 +58,7 @@ function filterAndUpdateList(query) {
     ul = document.querySelector("ul");
     ul.innerHTML = "";
 
-    filteredCountries.forEach(country => {
+    filteredCountriesList.forEach(country => {
         li = document.createElement("li");
         li.textContent = `${country.name.common} - Population: ${country.population}`;
         ul.appendChild(li);
